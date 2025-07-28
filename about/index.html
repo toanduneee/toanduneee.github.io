@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | n0t4_</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"> <!-- Đường dẫn đã sửa cho đúng vị trí -->
+
+    <!-- Thêm thư viện icon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- Cài đặt font chữ và các thiết lập chung --- */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+        /* --- Bảng màu Dark Mode --- */
+        :root {
+            --dark-bg: #282c34;       /* Màu nền chính */
+            --dark-bg-alt: #21252b;   /* Màu nền phụ cho bài viết */
+            --light-text: #abb2bf;    /* Màu chữ chính */
+            --title-text: #ffffff;    /* Màu chữ cho tiêu đề */
+            --link-color: #61afef;    /* Màu cho liên kết */
+            --border-color: #3e4451;  /* Màu cho đường viền */
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--title-text);
+        }
+
+        .container {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* --- Phần Header (Đầu trang) --- */
+        .site-header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .avatar-wrapper {
+            display: inline-block;
+            position: relative;
+            background: radial-gradient(circle at center, transparent 65%, rgba(97, 175, 239, 0.2) 75%, rgba(97, 175, 239, 0) 95%);
+            padding: 20px;
+            border-radius: 50%;
+            animation: pulse-glow 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .highlight-name {
+            background: linear-gradient(90deg, #61afef, #56d0c4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .site-header h1 {
+            margin: 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        .site-header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* --- Phần Navigation (Menu) --- */
+        .site-nav {
+            background-color: #495057;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .site-nav a {
+            color: white;
+            padding: 0.5rem 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .site-nav a:hover {
+            background-color: #6c757d;
+            border-radius: 5px;
+        }
+        
+        /* --- Phần Nội dung chính của trang About --- */
+        .about-section {
+            background-color: var(--dark-bg-alt);
+            padding: 2.5rem;
+            margin: 2rem auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-section h2 {
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--link-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem; /* Khoảng cách giữa các icon */
+            margin-top: 1.5rem;
+            flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem; /* Khoảng cách giữa icon và chữ */
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 2.5rem; /* Kích thước icon */
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item a:hover i {
+            transform: scale(1.15); /* Hiệu ứng phóng to khi hover */
+        }
+
+        .styled-hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 3rem 0;
+        }
+
+        .signature {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--title-text);
+        }
+
+        /* --- Footer (Chân trang) --- */
+        .site-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background-color: var(--dark-bg-alt);
+            color: var(--light-text);
+            border-top: 1px solid var(--border-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ======================= BẮT ĐẦU HEADER (ĐẦU TRANG) ======================= -->
+    <header class="site-header">
+        <div class="container">
+            <div class="avatar-wrapper">
+                <img src="/images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
+            </div>
+            <h1>n0t4_'s Blog</h1>
+            <p>Hi guys! My name is <span class="highlight-name">n0t4_</span>. And welcome to my blog</p> 
+        </div>
+    </header>
+    <!-- ======================= KẾT THÚC HEADER (ĐẦU TRANG) ======================= -->
+
+
+    <!-- ======================= BẮT ĐẦU NAVIGATION (MENU) ======================= -->
+    <nav class="site-nav">
+        <div class="container">
+            <a href="/index.html">Home</a> <!-- Sửa lại link về trang chủ -->
+            <a href="#">About me</a>
+        </div>
+    </nav>
+    <!-- ======================= KẾT THÚC NAVIGATION (MENU) ======================= -->
+
+
+    <div class="container">
+        <!-- ======================= BẮT ĐẦU NỘI DUNG TRANG ABOUT ======================= -->
+        <main class="about-section">
+            
+            <section>
+                <h2>✍️ About me</h2>
+                <p>
+                    Hi hi, xin chèoooo! Tớ là Toàn, hiện đang là sinh viên năm 2 ở Học viện Kỹ Thuật Mật Mã với ngành học An Toàn Thông Tin.
+                </p>
+            </section>
+
+            <section>
+                <h2>🥇 Thành tích</h2>
+                <p>
+                    Thì tớ cũng chả có cái vẹo gì hết ý =))))))
+                </p>
+            </section>
+            
+            <section>
+                <h2>📱 Liên hệ</h2>
+                <div class="contact-list">
+                    <span class="contact-item">
+                        <a href="https://www.facebook.com/toandunee" target="_blank" title="Facebook">
+                            <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
+                        </a>
+                    </span>
+                    <span class="contact-item">
+                        <a href="https://www.instagram.com/toandunee/" target="_blank" title="Instagram">
+                            <i class="fa-brands fa-instagram" style="color: #e4405f;"></i>
+                        </a>
+                    </span>
+                    <span class="contact-item">
+                        <i class="fa-solid fa-envelope" style="color: #c71610;"></i>
+                        <span>toandunee@gmail.com</span>
+                    </span>
+                </div>
+            </section>
+
+            <hr class="styled-hr">
+
+            <p class="signature">
+                Thanks for visiting my space!<br>
+                <strong>~ n0t4_ ~</strong>
+            </p>
+
+        </main>
+        <!-- ======================= KẾT THÚC NỘI DUNG TRANG ABOUT ======================= -->
+    </div>
+
+
+    <!-- ======================= BẮT ĐẦU FOOTER (CHÂN TRANG) ======================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 - n0t4_. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <!-- ======================= KẾT THÚC FOOTER (CHÂN TRANG) ======================= -->
+
+</body>
+</html>
