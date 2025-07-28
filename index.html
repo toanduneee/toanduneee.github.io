@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Cá Nhân Của Tôi</title>
+    <title>n0t4_'s Blog</title>
     <style>
         /* --- Cài đặt font chữ và các thiết lập chung --- */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+        /* --- Bảng màu Dark Mode --- */
+        :root {
+            --dark-bg: #282c34;       /* Màu nền chính */
+            --dark-bg-alt: #21252b;   /* Màu nền phụ cho bài viết */
+            --light-text: #abb2bf;    /* Màu chữ chính */
+            --title-text: #ffffff;    /* Màu chữ cho tiêu đề */
+            --link-color: #61afef;    /* Màu cho liên kết */
+            --border-color: #3e4451;  /* Màu cho đường viền */
+        }
 
         body {
-            font-family: 'Lora', serif;
+            font-family: 'Lato', sans-serif; /* Đổi sang font không chân hiện đại */
             line-height: 1.7;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
             margin: 0;
             padding: 0;
         }
@@ -20,6 +30,7 @@
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            color: var(--title-text);
         }
 
         .container {
@@ -30,22 +41,38 @@
         }
 
         a {
-            color: #007bff;
+            color: var(--link-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #0056b3;
+            color: #fff;
             text-decoration: underline;
         }
 
         /* --- Phần Header (Đầu trang) --- */
+        /* GIỮ NGUYÊN THEO YÊU CẦU CỦA BẠN */
         .site-header {
             background-color: #343a40;
             color: white;
             padding: 2rem 0;
             text-align: center;
+        }
+        
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-name {
+            color: #ffc107;
+            font-weight: 700;
+            font-style: normal;
         }
 
         .site-header h1 {
@@ -67,6 +94,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .site-nav a {
@@ -99,11 +127,11 @@
 
         /* --- Bài viết (Article) --- */
         .post {
-            background-color: white;
+            background-color: var(--dark-bg-alt); /* Đổi nền bài viết */
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color); /* Thay box-shadow bằng border */
         }
 
         .post-title {
@@ -112,7 +140,7 @@
         }
         
         .post-meta {
-            color: #6c757d;
+            color: #9da5b4; /* Đổi màu metadata cho dễ đọc */
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
             font-style: italic;
@@ -127,32 +155,33 @@
 
         .read-more-btn {
             display: inline-block;
-            background-color: #007bff;
-            color: white;
+            background-color: var(--link-color);
+            color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            transition: background-color 0.3s;
         }
 
         .read-more-btn:hover {
-            background-color: #0056b3;
-            color: white;
+            background-color: #fff;
+            color: var(--dark-bg);
             text-decoration: none;
         }
 
         /* --- Sidebar Widget --- */
         .widget {
-            background-color: white;
+            background-color: var(--dark-bg-alt); /* Đổi nền widget */
             padding: 1.5rem;
             margin-bottom: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color); /* Thay box-shadow bằng border */
         }
 
         .widget-title {
             margin-top: 0;
-            border-bottom: 2px solid #dee2e6;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
@@ -172,8 +201,9 @@
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
-            background-color: #343a40;
-            color: #adb5bd;
+            background-color: var(--dark-bg-alt);
+            color: var(--light-text);
+            border-top: 1px solid var(--border-color);
         }
 
         /* --- Thiết lập cho màn hình nhỏ (điện thoại) --- */
@@ -193,10 +223,9 @@
     <!-- ======================= BẮT ĐẦU HEADER (ĐẦU TRANG) ======================= -->
     <header class="site-header">
         <div class="container">
-            <!-- Thay đổi tên Blog của bạn ở đây -->
-            <h1>Nhật Ký Của Tôi</h1>
-            <!-- Thay đổi dòng giới thiệu ngắn ở đây -->
-            <p>Nơi ghi lại những hành trình và suy ngẫm</p>
+            <img src="images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
+            <h1>n0t4_'s Blog</h1>
+            <p>Hi guys! My name is <span class="highlight-name">n0t4_</span>. And welcome to my blog</p> 
         </div>
     </header>
     <!-- ======================= KẾT THÚC HEADER (ĐẦU TRANG) ======================= -->
@@ -205,10 +234,8 @@
     <!-- ======================= BẮT ĐẦU NAVIGATION (MENU) ======================= -->
     <nav class="site-nav">
         <div class="container">
-            <a href="#">Trang Chủ</a>
-            <a href="#">Giới Thiệu</a>
-            <a href="#">Dự Án</a>
-            <a href="#">Liên Hệ</a>
+            <a href="#">Home</a>
+            <a href="/about/">About me</a>
         </div>
     </nav>
     <!-- ======================= KẾT THÚC NAVIGATION (MENU) ======================= -->
@@ -222,7 +249,7 @@
             <article class="post">
                 <h2 class="post-title">Chuyến Đi Đà Lạt Mùa Mưa</h2>
                 <div class="post-meta">
-                    <span>Ngày đăng: 20 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
+                    <span>Ngày đăng: 20 tháng 7, 2025</span> | <span>Tác giả: n0t4_</span>
                 </div>
                 <div class="post-excerpt">
                     <img src="https://via.placeholder.com/800x400.png?text=Ảnh+minh+họa" alt="Ảnh minh họa Đà Lạt">
@@ -237,25 +264,11 @@
             <article class="post">
                 <h2 class="post-title">Học Một Ngôn Ngữ Lập Trình Mới</h2>
                 <div class="post-meta">
-                    <span>Ngày đăng: 15 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
+                    <span>Ngày đăng: 15 tháng 7, 2025</span> | <span>Tác giả: n0t4_</span>
                 </div>
                 <div class="post-excerpt">
                     <p>
                         Đây là đoạn tóm tắt cho bài viết thứ hai. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
-                    </p>
-                </div>
-                <a href="#" class="read-more-btn">Đọc thêm →</a>
-            </article>
-
-            <!-- ----- BÀI VIẾT MẪU SỐ 3 ----- -->
-            <article class="post">
-                <h2 class="post-title">Làm Việc Hiệu Quả Từ Xa</h2>
-                <div class="post-meta">
-                    <span>Ngày đăng: 10 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
-                </div>
-                <div class="post-excerpt">
-                    <p>
-                        Đây là đoạn tóm tắt cho bài viết thứ ba. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
                     </p>
                 </div>
                 <a href="#" class="read-more-btn">Đọc thêm →</a>
@@ -271,7 +284,7 @@
             <!-- ----- Widget Giới thiệu ----- -->
             <div class="widget">
                 <h3 class="widget-title">Giới Thiệu</h3>
-                <p>Chào bạn! Tôi là [Tên Của Bạn]. Chào mừng đến với blog cá nhân, nơi tôi chia sẻ về lập trình, du lịch và cuộc sống.</p>
+                <p>Chào bạn! Tôi là n0t4_. Chào mừng đến với blog cá nhân, nơi tôi chia sẻ về lập trình, du lịch và cuộc sống.</p>
             </div>
 
             <!-- ----- Widget Bài viết mới ----- -->
@@ -280,7 +293,6 @@
                 <ul>
                     <li><a href="#">Chuyến Đi Đà Lạt Mùa Mưa</a></li>
                     <li><a href="#">Học Một Ngôn Ngữ Lập Trình Mới</a></li>
-                    <li><a href="#">Làm Việc Hiệu Quả Từ Xa</a></li>
                 </ul>
             </div>
             
@@ -302,7 +314,7 @@
     <!-- ======================= BẮT ĐẦU FOOTER (CHÂN TRANG) ======================= -->
     <footer class="site-footer">
         <div class="container">
-            <p>© 2025 - Tên Của Bạn. Mọi quyền được bảo lưu.</p>
+            <p>© 2025 - n0t4_. Mọi quyền được bảo lưu.</p>
         </div>
     </footer>
     <!-- ======================= KẾT THÚC FOOTER (CHÂN TRANG) ======================= -->
