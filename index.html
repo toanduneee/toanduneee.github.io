@@ -61,17 +61,56 @@
             text-align: center;
         }
         
+        /* --- CSS cho Vầng hào quang xung quanh avatar --- */
+        .avatar-wrapper {
+            display: inline-block;
+            position: relative;
+            
+            /* Dùng background để vẽ vầng hào quang nhạt dần */
+            background: radial-gradient(circle at center, 
+                transparent 65%,      /* Trong suốt ở gần ảnh */
+                rgba(97, 175, 239, 0.2) 75%,  /* Một lớp màu xanh mỏng */
+                rgba(97, 175, 239, 0) 95%    /* Nhạt dần ra ngoài */
+            );
+            
+            padding: 20px; /* Tạo không gian cho vầng hào quang */
+            border-radius: 50%; /* Luôn giữ hình tròn */
+            
+            /* Thêm hiệu ứng "thở" */
+            animation: pulse-glow 4s infinite ease-in-out;
+        }
+
+        /* Keyframes cho hiệu ứng "thở" */
+        @keyframes pulse-glow {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* --- CSS cho ảnh đại diện bên trong --- */
         .profile-picture {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1rem;
+            /* Bỏ border và box-shadow cũ vì đã có hào quang thay thế */
+            display: block; /* Giúp ảnh nằm ngay ngắn trong wrapper */
         }
 
         .highlight-name {
-            color: #ffc107;
+            /* Tạo dải màu gradient */
+            background: linear-gradient(90deg, #61afef, #56d0c4); 
+            /* Áp dụng gradient làm màu cho chữ */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* Làm cho màu chữ gốc trở nên trong suốt */
+            -webkit-text-fill-color: transparent;
             font-weight: 700;
             font-style: normal;
         }
@@ -224,7 +263,9 @@
     <!-- ======================= BẮT ĐẦU HEADER (ĐẦU TRANG) ======================= -->
     <header class="site-header">
         <div class="container">
-            <img src="images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
+            <div class="avatar-wrapper">
+                <img src="images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
+            </div>
             <h1>n0t4_</h1>
             <p>Hi guys! My name is <span class="highlight-name">n0t4_</span>. And welcome to my blog</p> 
         </div>
@@ -248,7 +289,7 @@
 
             <!-- ----- BÀI VIẾT MẪU SỐ 1 ----- -->
             <article class="post">
-                <h2 class="post-title">Chuyến Đi Đà Lạt Mùa Mưa</h2>
+                <h2 class="post-title">Block 1</h2>
                 <div class="post-meta">
                     <span>Ngày đăng: 20 tháng 7, 2025</span> | <span>Tác giả: n0t4_</span>
                 </div>
@@ -263,7 +304,7 @@
 
             <!-- ----- BÀI VIẾT MẪU SỐ 2 ----- -->
             <article class="post">
-                <h2 class="post-title">Học Một Ngôn Ngữ Lập Trình Mới</h2>
+                <h2 class="post-title">Block 2</h2>
                 <div class="post-meta">
                     <span>Ngày đăng: 15 tháng 7, 2025</span> | <span>Tác giả: n0t4_</span>
                 </div>
@@ -285,15 +326,15 @@
             <!-- ----- Widget Giới thiệu ----- -->
             <div class="widget">
                 <h3 class="widget-title">Giới Thiệu</h3>
-                <p>Chào bạn! Tôi là n0t4_. Chào mừng đến với blog cá nhân, nơi tôi chia sẻ về lập trình, du lịch và cuộc sống.</p>
+                <p>Helloooo! Tớ là n0t4_. Chào mừng đến với blog của tớ.</p>
             </div>
 
             <!-- ----- Widget Bài viết mới ----- -->
             <div class="widget">
                 <h3 class="widget-title">Bài Viết Mới</h3>
                 <ul>
-                    <li><a href="#">Chuyến Đi Đà Lạt Mùa Mưa</a></li>
-                    <li><a href="#">Học Một Ngôn Ngữ Lập Trình Mới</a></li>
+                    <li><a href="#">Block 1</a></li>
+                    <li><a href="#">Block 2</a></li>
                 </ul>
             </div>
             
@@ -301,9 +342,9 @@
             <div class="widget">
                 <h3 class="widget-title">Chuyên Mục</h3>
                 <ul>
-                    <li><a href="#">Kinh Nghiệm Lập Trình</a></li>
-                    <li><a href="#">Nhật Ký Du Lịch</a></li>
-                    <li><a href="#">Chia Sẻ Cuộc Sống</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
                 </ul>
             </div>
 
