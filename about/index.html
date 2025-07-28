@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | n0t4_</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"> <!-- Đường dẫn đã sửa cho đúng vị trí -->
+    <title>About Me | n0t4_'s Blog</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <!-- Thêm thư viện icon Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -15,12 +15,12 @@
 
         /* --- Bảng màu Dark Mode --- */
         :root {
-            --dark-bg: #282c34;       /* Màu nền chính */
-            --dark-bg-alt: #21252b;   /* Màu nền phụ cho bài viết */
-            --light-text: #abb2bf;    /* Màu chữ chính */
-            --title-text: #ffffff;    /* Màu chữ cho tiêu đề */
-            --link-color: #61afef;    /* Màu cho liên kết */
-            --border-color: #3e4451;  /* Màu cho đường viền */
+            --dark-bg: #282c34;
+            --dark-bg-alt: #21252b;
+            --light-text: #abb2bf;
+            --title-text: #ffffff;
+            --link-color: #61afef;
+            --border-color: #3e4451;
         }
 
         body {
@@ -146,20 +146,19 @@
             display: inline-block;
         }
 
+        /* === CSS ĐÃ ĐƯỢC SỬA LỖI === */
         .contact-list {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem; /* Khoảng cách giữa các icon */
+            flex-direction: column; /* Xếp các phần tử con theo chiều dọc */
+            align-items: center;    /* Căn giữa các dòng theo chiều ngang */
+            gap: 1rem;              /* Tạo khoảng cách giữa dòng icon và dòng email */
             margin-top: 1.5rem;
-            flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
         }
 
         .social-icons {
             display: flex;
             gap: 2rem; /* Khoảng cách giữa các icon */
             font-size: 2.8rem; /* Tăng kích thước icon mạng xã hội */
-            margin-bottom: 1rem; /* Tạo khoảng cách với dòng email bên dưới */
         }
 
         .social-icons a {
@@ -181,22 +180,6 @@
             font-size: 1.5rem; /* Điều chỉnh kích thước icon email cho phù hợp */
         }
         
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem; /* Khoảng cách giữa icon và chữ */
-            font-size: 1.1rem;
-        }
-
-        .contact-item i {
-            font-size: 2.5rem; /* Kích thước icon */
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item a:hover i {
-            transform: scale(1.15); /* Hiệu ứng phóng to khi hover */
-        }
-
         .styled-hr {
             border: 0;
             height: 1px;
@@ -229,9 +212,9 @@
     <header class="site-header">
         <div class="container">
             <div class="avatar-wrapper">
-                <img src="/images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
+                <img src="../images/avatar.png" alt="Ảnh đại diện của n0t4_" class="profile-picture">
             </div>
-            <h1>n0t4_</h1>
+            <h1>n0t4_'s Blog</h1>
             <p>Hi guys! My name is <span class="highlight-name">n0t4_</span>. And welcome to my blog</p> 
         </div>
     </header>
@@ -241,8 +224,10 @@
     <!-- ======================= BẮT ĐẦU NAVIGATION (MENU) ======================= -->
     <nav class="site-nav">
         <div class="container">
-            <a href="/index.html">Home</a> <!-- Sửa lại link về trang chủ -->
-            <a href="#">About me</a>
+            <a href="../index.html">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="#">Dự Án</a>
+            <a href="#">Liên Hệ</a>
         </div>
     </nav>
     <!-- ======================= KẾT THÚC NAVIGATION (MENU) ======================= -->
