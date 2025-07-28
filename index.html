@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Cá Nhân Của Tôi</title>
+    <style>
+        /* --- Cài đặt font chữ và các thiết lập chung --- */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.7;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* --- Phần Header (Đầu trang) --- */
+        .site-header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .site-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .site-header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* --- Phần Navigation (Menu) --- */
+        .site-nav {
+            background-color: #495057;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .site-nav a {
+            color: white;
+            padding: 0.5rem 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .site-nav a:hover {
+            background-color: #6c757d;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        /* --- Phần Nội dung chính & Sidebar --- */
+        .main-content-area {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .main-content {
+            flex: 3;
+            margin-right: 2rem;
+        }
+
+        .sidebar {
+            flex: 1;
+        }
+
+        /* --- Bài viết (Article) --- */
+        .post {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .post-title {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+        
+        .post-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .post-excerpt img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .read-more-btn:hover {
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* --- Sidebar Widget --- */
+        .widget {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            margin-top: 0;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .widget ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .widget li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer (Chân trang) --- */
+        .site-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background-color: #343a40;
+            color: #adb5bd;
+        }
+
+        /* --- Thiết lập cho màn hình nhỏ (điện thoại) --- */
+        @media (max-width: 768px) {
+            .main-content-area {
+                flex-direction: column;
+            }
+
+            .main-content {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= BẮT ĐẦU HEADER (ĐẦU TRANG) ======================= -->
+    <header class="site-header">
+        <div class="container">
+            <!-- Thay đổi tên Blog của bạn ở đây -->
+            <h1>Nhật Ký Của Tôi</h1>
+            <!-- Thay đổi dòng giới thiệu ngắn ở đây -->
+            <p>Nơi ghi lại những hành trình và suy ngẫm</p>
+        </div>
+    </header>
+    <!-- ======================= KẾT THÚC HEADER (ĐẦU TRANG) ======================= -->
+
+
+    <!-- ======================= BẮT ĐẦU NAVIGATION (MENU) ======================= -->
+    <nav class="site-nav">
+        <div class="container">
+            <a href="#">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="#">Dự Án</a>
+            <a href="#">Liên Hệ</a>
+        </div>
+    </nav>
+    <!-- ======================= KẾT THÚC NAVIGATION (MENU) ======================= -->
+
+
+    <div class="container main-content-area">
+        <!-- ======================= BẮT ĐẦU NỘI DUNG CHÍNH (CÁC BÀI VIẾT) ======================= -->
+        <main class="main-content">
+
+            <!-- ----- BÀI VIẾT MẪU SỐ 1 ----- -->
+            <article class="post">
+                <h2 class="post-title">Chuyến Đi Đà Lạt Mùa Mưa</h2>
+                <div class="post-meta">
+                    <span>Ngày đăng: 20 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
+                </div>
+                <div class="post-excerpt">
+                    <img src="https://via.placeholder.com/800x400.png?text=Ảnh+minh+họa" alt="Ảnh minh họa Đà Lạt">
+                    <p>
+                        Đây là đoạn tóm tắt cho bài viết đầu tiên của bạn. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Đọc thêm →</a>
+            </article>
+
+            <!-- ----- BÀI VIẾT MẪU SỐ 2 ----- -->
+            <article class="post">
+                <h2 class="post-title">Học Một Ngôn Ngữ Lập Trình Mới</h2>
+                <div class="post-meta">
+                    <span>Ngày đăng: 15 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
+                </div>
+                <div class="post-excerpt">
+                    <p>
+                        Đây là đoạn tóm tắt cho bài viết thứ hai. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Đọc thêm →</a>
+            </article>
+
+            <!-- ----- BÀI VIẾT MẪU SỐ 3 ----- -->
+            <article class="post">
+                <h2 class="post-title">Làm Việc Hiệu Quả Từ Xa</h2>
+                <div class="post-meta">
+                    <span>Ngày đăng: 10 tháng 7, 2025</span> | <span>Tác giả: Tên Của Bạn</span>
+                </div>
+                <div class="post-excerpt">
+                    <p>
+                        Đây là đoạn tóm tắt cho bài viết thứ ba. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Đọc thêm →</a>
+            </article>
+
+        </main>
+        <!-- ======================= KẾT THÚC NỘI DUNG CHÍNH ======================= -->
+
+
+        <!-- ======================= BẮT ĐẦU SIDEBAR (THANH BÊN) ======================= -->
+        <aside class="sidebar">
+
+            <!-- ----- Widget Giới thiệu ----- -->
+            <div class="widget">
+                <h3 class="widget-title">Giới Thiệu</h3>
+                <p>Chào bạn! Tôi là [Tên Của Bạn]. Chào mừng đến với blog cá nhân, nơi tôi chia sẻ về lập trình, du lịch và cuộc sống.</p>
+            </div>
+
+            <!-- ----- Widget Bài viết mới ----- -->
+            <div class="widget">
+                <h3 class="widget-title">Bài Viết Mới</h3>
+                <ul>
+                    <li><a href="#">Chuyến Đi Đà Lạt Mùa Mưa</a></li>
+                    <li><a href="#">Học Một Ngôn Ngữ Lập Trình Mới</a></li>
+                    <li><a href="#">Làm Việc Hiệu Quả Từ Xa</a></li>
+                </ul>
+            </div>
+            
+            <!-- ----- Widget Chuyên mục ----- -->
+            <div class="widget">
+                <h3 class="widget-title">Chuyên Mục</h3>
+                <ul>
+                    <li><a href="#">Kinh Nghiệm Lập Trình</a></li>
+                    <li><a href="#">Nhật Ký Du Lịch</a></li>
+                    <li><a href="#">Chia Sẻ Cuộc Sống</a></li>
+                </ul>
+            </div>
+
+        </aside>
+        <!-- ======================= KẾT THÚC SIDEBAR ======================= -->
+    </div>
+
+
+    <!-- ======================= BẮT ĐẦU FOOTER (CHÂN TRANG) ======================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 - Tên Của Bạn. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <!-- ======================= KẾT THÚC FOOTER (CHÂN TRANG) ======================= -->
+
+</body>
+</html>
