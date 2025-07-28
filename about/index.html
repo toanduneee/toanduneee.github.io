@@ -154,6 +154,32 @@
             margin-top: 1.5rem;
             flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
         }
+
+        .social-icons {
+            display: flex;
+            gap: 2rem; /* Khoảng cách giữa các icon */
+            font-size: 2.8rem; /* Tăng kích thước icon mạng xã hội */
+            margin-bottom: 1rem; /* Tạo khoảng cách với dòng email bên dưới */
+        }
+
+        .social-icons a {
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.15); /* Hiệu ứng phóng to khi hover */
+        }
+
+        .email-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem; /* Khoảng cách giữa icon và chữ */
+            font-size: 1.1rem;
+        }
+
+        .email-contact i {
+            font-size: 1.5rem; /* Điều chỉnh kích thước icon email cho phù hợp */
+        }
         
         .contact-item {
             display: flex;
@@ -205,7 +231,7 @@
             <div class="avatar-wrapper">
                 <img src="/images/avatar.png" alt="n0t4_'s Avatar" class="profile-picture">
             </div>
-            <h1>n0t4_'s Blog</h1>
+            <h1>n0t4_</h1>
             <p>Hi guys! My name is <span class="highlight-name">n0t4_</span>. And welcome to my blog</p> 
         </div>
     </header>
@@ -243,20 +269,21 @@
             <section>
                 <h2>📱 Liên hệ</h2>
                 <div class="contact-list">
-                    <span class="contact-item">
+
+                    <div class="social-icons">
                         <a href="https://www.facebook.com/toandunee" target="_blank" title="Facebook">
                             <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
                         </a>
-                    </span>
-                    <span class="contact-item">
                         <a href="https://www.instagram.com/toandunee/" target="_blank" title="Instagram">
                             <i class="fa-brands fa-instagram" style="color: #e4405f;"></i>
                         </a>
-                    </span>
-                    <span class="contact-item">
+                    </div>
+                    
+                    <div class="email-contact">
                         <i class="fa-solid fa-envelope" style="color: #c71610;"></i>
                         <span>toandunee@gmail.com</span>
-                    </span>
+                    </div>
+
                 </div>
             </section>
 
