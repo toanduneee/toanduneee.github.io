@@ -1,6 +1,13 @@
 /* --- Cài đặt font chữ và các thiết lập chung --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
+@font-face {
+  font-family: 'ArcadeAmong';
+  src: url('/fonts/arcade-among-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* --- Bảng màu Dark Mode --- */
 :root {
     --dark-bg: #282c34;       /* Màu nền chính */
@@ -12,7 +19,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif; /* Đổi sang font không chân hiện đại */
+    font-family: 'ArcadeAmong', sans-serif;
     line-height: 1.7;
     background-color: var(--dark-bg);
     color: var(--light-text);
@@ -250,25 +257,25 @@ a:hover {
 }
 
 .pagination {
-  margin-top: 40px;
-  text-align: center;
+    margin-top: 40px;
+    text-align: center;
 }
 .pagination a, .pagination span {
-  display: inline-block;
-  padding: 6px 12px;
-  margin: 2px;
-  border: 1px solid #ccc;
-  color: #007bff;
-  text-decoration: none;
-  border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
 }
 .pagination a.active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  pointer-events: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
 }
 .pagination span {
-  border: none;
-  color: #999;
+    border: none;
+    color: #999;
 }
