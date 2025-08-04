@@ -20,7 +20,7 @@
 
 body {
     font-family: 'ArcadeAmong', sans-serif;
-    font-size: 100px;
+    font-size: 2em;
     line-height: 1.7;
     background-color: var(--dark-bg);
     color: var(--light-text);
