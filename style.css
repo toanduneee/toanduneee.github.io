@@ -56,16 +56,22 @@ a:hover {
 .site-header {
     background-color: #343a40;
     color: white;
-    padding: 2rem 0;
+    padding: 0.5rem 0;
     text-align: center;
 }
 
 .site-header h1 {
+    margin: 0;
     font-size: 100px !important;
 }
 
 .site-header p {
+    font-size: 1.1rem;
+    font-style: italic;
     font-size: 36px !important;
+    margin-top: 0.1rem;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 /* --- CSS cho Vầng hào quang xung quanh avatar --- */
@@ -80,11 +86,12 @@ a:hover {
         rgba(97, 175, 239, 0) 95%    /* Nhạt dần ra ngoài */
     );
     
-    padding: 20px; /* Tạo không gian cho vầng hào quang */
+    padding: 10px; /* Tạo không gian cho vầng hào quang */
     border-radius: 50%; /* Luôn giữ hình tròn */
     
     /* Thêm hiệu ứng "thở" */
     animation: pulse-glow 4s infinite ease-in-out;
+    margin-bottom: 0.3rem; 
 }
 
 /* Keyframes cho hiệu ứng "thở" */
@@ -106,7 +113,6 @@ a:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    /* Bỏ border và box-shadow cũ vì đã có hào quang thay thế */
     display: block; /* Giúp ảnh nằm ngay ngắn trong wrapper */
 }
 
@@ -120,17 +126,6 @@ a:hover {
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     font-style: normal;
-}
-
-.site-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-.site-header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.1rem;
-    font-style: italic;
 }
 
 /* --- Phần Navigation (Menu) --- */
@@ -148,13 +143,17 @@ a:hover {
     color: white;
     padding: 0.5rem 1rem;
     font-family: 'ArcadeAmong', sans-serif;
-    font-size: 2rem;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s ease;
 }
 
 .site-nav a:hover {
-    background-color: #6c757d;
-    text-decoration: none;
-    border-radius: 5px;
+    background-color: #56d0c4;     /* Xanh nước biển sáng */
+    color: black;
+    box-shadow: 2px 2px 0 #000;     /* Hiệu ứng nổi lên */
+    border-radius: 0;               /* Vuông góc */
 }
 
 /* --- Phần Nội dung chính & Sidebar --- */
@@ -205,8 +204,8 @@ a:hover {
 
 .read-more-btn {
     display: inline-block;
-    background-color: var(--link-color);
-    color: #fff;
+    background-color: #56d0c4;
+    color: var(--dark-bg-alt);
     padding: 10px 20px;
     border-radius: 5px;
     font-family: 'ArcadeAmong', sans-serif;
@@ -292,11 +291,6 @@ a:hover {
     border-radius: 0;         /* Vuông góc pixel-style */
 }
 
-.pagination a:hover {
-    background-color: #1f1f1f;
-    color: white;
-}
-
 .pagination a.active {
     background-color: #56d0c4;
     color: black;
@@ -309,7 +303,7 @@ a:hover {
 }
 
 .pagination a:hover {
-    background-color: #00ffcc;
+    background-color: #56d0c4;
     color: black;
     box-shadow: 2px 2px 0px #000;
 }
