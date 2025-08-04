@@ -74,48 +74,6 @@ a:hover {
     line-height: 1.2;
 }
 
-/* --- CSS cho Vầng hào quang xung quanh avatar --- */
-.avatar-wrapper {
-    display: inline-block;
-    position: relative;
-    
-    /* Dùng background để vẽ vầng hào quang nhạt dần */
-    background: radial-gradient(circle at center, 
-        transparent 65%,      /* Trong suốt ở gần ảnh */
-        rgba(97, 175, 239, 0.2) 75%,  /* Một lớp màu xanh mỏng */
-        rgba(97, 175, 239, 0) 95%    /* Nhạt dần ra ngoài */
-    );
-    
-    padding: 10px; /* Tạo không gian cho vầng hào quang */
-    border-radius: 50%; /* Luôn giữ hình tròn */
-    
-    /* Thêm hiệu ứng "thở" */
-    animation: pulse-glow 4s infinite ease-in-out;
-    margin-bottom: 0.3rem; 
-}
-
-/* Keyframes cho hiệu ứng "thở" */
-@keyframes pulse-glow {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-/* --- CSS cho ảnh đại diện bên trong --- */
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: block; /* Giúp ảnh nằm ngay ngắn trong wrapper */
-}
-
 .highlight-name {
     /* Tạo dải màu gradient */
     background: linear-gradient(90deg, #61afef, #56d0c4); 
@@ -129,31 +87,52 @@ a:hover {
 }
 
 /* --- Phần Navigation (Menu) --- */
-.site-nav {
-    background-color: #495057;
-    padding: 0.5rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+/* Bố cục nav: avatar trái, menu phải */
+.site-nav .container,
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
-.site-nav a {
+/* Avatar nhỏ */
+.nav-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    margin-top: 0.6rem;
+}
+
+.nav-avatar:hover img {
+    transform: scale(1.1);
+}
+
+/* Link menu bên phải */
+.nav-links a {
     color: white;
     padding: 0.5rem 1rem;
     font-family: 'ArcadeAmong', sans-serif;
     font-size: 20px;
     text-decoration: none;
-    position: relative;
     transition: all 0.2s ease;
 }
 
-.site-nav a:hover {
-    background-color: #56d0c4;     /* Xanh nước biển sáng */
+.nav-links a:hover {
+    background-color: #56d0c4;
     color: black;
-    box-shadow: 2px 2px 0 #000;     /* Hiệu ứng nổi lên */
-    border-radius: 0;               /* Vuông góc */
+    box-shadow: 2px 2px 0 #000;
+    border-radius: 0;
+}
+
+.site-nav {
+    background-color: #495057;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* --- Phần Nội dung chính & Sidebar --- */
@@ -261,7 +240,7 @@ a:hover {
         flex-direction: column;
     }
 
-    .body {
+    body {
         font-size: 20px;
     }
 
