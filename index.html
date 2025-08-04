@@ -3,260 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>n0t4_</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <style>
-        /* --- Cài đặt font chữ và các thiết lập chung --- */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
-        /* --- Bảng màu Dark Mode --- */
-        :root {
-            --dark-bg: #282c34;       /* Màu nền chính */
-            --dark-bg-alt: #21252b;   /* Màu nền phụ cho bài viết */
-            --light-text: #abb2bf;    /* Màu chữ chính */
-            --title-text: #ffffff;    /* Màu chữ cho tiêu đề */
-            --link-color: #61afef;    /* Màu cho liên kết */
-            --border-color: #3e4451;  /* Màu cho đường viền */
-        }
-
-        body {
-            font-family: 'Lato', sans-serif; /* Đổi sang font không chân hiện đại */
-            line-height: 1.7;
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--title-text);
-        }
-
-        .container {
-            max-width: 960px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 15px;
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        /* --- Phần Header (Đầu trang) --- */
-        /* GIỮ NGUYÊN THEO YÊU CẦU CỦA BẠN */
-        .site-header {
-            background-color: #343a40;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        /* --- CSS cho Vầng hào quang xung quanh avatar --- */
-        .avatar-wrapper {
-            display: inline-block;
-            position: relative;
-            
-            /* Dùng background để vẽ vầng hào quang nhạt dần */
-            background: radial-gradient(circle at center, 
-                transparent 65%,      /* Trong suốt ở gần ảnh */
-                rgba(97, 175, 239, 0.2) 75%,  /* Một lớp màu xanh mỏng */
-                rgba(97, 175, 239, 0) 95%    /* Nhạt dần ra ngoài */
-            );
-            
-            padding: 20px; /* Tạo không gian cho vầng hào quang */
-            border-radius: 50%; /* Luôn giữ hình tròn */
-            
-            /* Thêm hiệu ứng "thở" */
-            animation: pulse-glow 4s infinite ease-in-out;
-        }
-
-        /* Keyframes cho hiệu ứng "thở" */
-        @keyframes pulse-glow {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-
-        /* --- CSS cho ảnh đại diện bên trong --- */
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            /* Bỏ border và box-shadow cũ vì đã có hào quang thay thế */
-            display: block; /* Giúp ảnh nằm ngay ngắn trong wrapper */
-        }
-
-        .highlight-name {
-            /* Tạo dải màu gradient */
-            background: linear-gradient(90deg, #61afef, #56d0c4); 
-            /* Áp dụng gradient làm màu cho chữ */
-            -webkit-background-clip: text;
-            background-clip: text;
-            /* Làm cho màu chữ gốc trở nên trong suốt */
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        .site-header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .site-header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-
-        /* --- Phần Navigation (Menu) --- */
-        .site-nav {
-            background-color: #495057;
-            padding: 0.5rem 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .site-nav a {
-            color: white;
-            padding: 0.5rem 1rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .site-nav a:hover {
-            background-color: #6c757d;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        
-        /* --- Phần Nội dung chính & Sidebar --- */
-        .main-content-area {
-            display: flex;
-            margin-top: 2rem;
-        }
-
-        .main-content {
-            flex: 3;
-            margin-right: 2rem;
-        }
-
-        .sidebar {
-            flex: 1;
-        }
-
-        /* --- Bài viết (Article) --- */
-        .post {
-            background-color: var(--dark-bg-alt); /* Đổi nền bài viết */
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color); /* Thay box-shadow bằng border */
-        }
-
-        .post-title {
-            margin-top: 0;
-            font-size: 2rem;
-        }
-        
-        .post-meta {
-            color: #9da5b4; /* Đổi màu metadata cho dễ đọc */
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .post-excerpt img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .read-more-btn {
-            display: inline-block;
-            background-color: var(--link-color);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            transition: background-color 0.3s;
-        }
-
-        .read-more-btn:hover {
-            background-color: #fff;
-            color: var(--dark-bg);
-            text-decoration: none;
-        }
-
-        /* --- Sidebar Widget --- */
-        .widget {
-            background-color: var(--dark-bg-alt); /* Đổi nền widget */
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color); /* Thay box-shadow bằng border */
-        }
-
-        .widget-title {
-            margin-top: 0;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .widget ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .widget li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* --- Footer (Chân trang) --- */
-        .site-footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            background-color: var(--dark-bg-alt);
-            color: var(--light-text);
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* --- Thiết lập cho màn hình nhỏ (điện thoại) --- */
-        @media (max-width: 768px) {
-            .main-content-area {
-                flex-direction: column;
-            }
-
-            .main-content {
-                margin-right: 0;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -292,26 +42,12 @@
                     <span>Ngày đăng: 31 tháng 3, 2025</span> | <span>Tác giả: n0t4_</span>
                 </div>
                 <div class="post-excerpt">
-                    <img  src="https://avatars.githubusercontent.com/u/85959911?s=200&v=4">
+                    <img src="https://avatars.githubusercontent.com/u/85959911?s=200&v=4">
                     <p>
                         Một vài challenge mảng web mà tớ đã làm được trong giải WolvCTF 2025.
                     </p>
                 </div>
-                <a href="#" class="read-more-btn">Đọc thêm →</a>
-            </article>
-
-            <!-- Post 2 -->
-            <article class="post">
-                <h2 class="post-title">Block 2</h2>
-                <div class="post-meta">
-                    <span>Ngày đăng: 15 tháng 7, 2025</span> | <span>Tác giả: n0t4_</span>
-                </div>
-                <div class="post-excerpt">
-                    <p>
-                        Đây là đoạn tóm tắt cho bài viết thứ hai. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
-                    </p>
-                </div>
-                <a href="#" class="read-more-btn">Đọc thêm →</a>
+                <a href="https://hackmd.io/eMhEZaytT7ajLRbSNzw2hQ" class="read-more-btn">Đọc thêm →</a>
             </article>
 
         </main>
@@ -350,6 +86,15 @@
         <!-- ======================= KẾT THÚC SIDEBAR ======================= -->
     </div>
 
+    <div class="pagination">
+        <a class="active" href="/">1</a>
+        <a href="/pages/2/">2</a>
+        <a href="/pages/3/">3</a>
+        <span>...</span>
+        <a href="/pages/49/">49</a>
+        <a href="/pages/50/">50</a>
+        <a href="/pages/2/">›</a>
+    </div>
 
     <!-- ======================= BẮT ĐẦU FOOTER (CHÂN TRANG) ======================= -->
     <footer class="site-footer">
