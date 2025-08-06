@@ -136,10 +136,11 @@ a:hover {
     margin: 2rem auto;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    font-size: 1.5rem;
 }
 
 .about-section h2 {
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     border-bottom: 2px solid var(--link-color);
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
@@ -173,7 +174,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.8rem; /* Khoảng cách giữa icon và chữ */
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 .email-contact i {
